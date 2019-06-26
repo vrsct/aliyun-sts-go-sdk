@@ -107,9 +107,6 @@ func (c *Client) AssumeRole(expiredTime uint) (*Response, error) {
 // Private function
 func (c *Client) generateSignedURL(expiredTime uint) (string, error) {
 	uuid, err := uuid.NewV4()
-	if err != nil {
-		return "", err
-	}
 
 	queryStr := "SignatureVersion=" + StsSignVersion
 	queryStr += "&Format=" + RespBodyFormat
